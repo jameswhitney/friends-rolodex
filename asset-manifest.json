@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/friends-rolodex/static/css/main.7234d650.css",
-    "main.js": "/friends-rolodex/static/js/main.12b7dc4e.js",
+    "main.js": "/friends-rolodex/static/js/main.bd3525dc.js",
     "static/js/787.b0fa83d8.chunk.js": "/friends-rolodex/static/js/787.b0fa83d8.chunk.js",
     "index.html": "/friends-rolodex/index.html",
     "main.7234d650.css.map": "/friends-rolodex/static/css/main.7234d650.css.map",
-    "main.12b7dc4e.js.map": "/friends-rolodex/static/js/main.12b7dc4e.js.map",
+    "main.bd3525dc.js.map": "/friends-rolodex/static/js/main.bd3525dc.js.map",
     "787.b0fa83d8.chunk.js.map": "/friends-rolodex/static/js/787.b0fa83d8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7234d650.css",
-    "static/js/main.12b7dc4e.js"
+    "static/js/main.bd3525dc.js"
   ]
 }
