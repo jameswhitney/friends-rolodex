@@ -27,7 +27,10 @@ class App extends Component {
   }
 
   onSearchChange = (event) => {
-    return this.setState({ searchField: event.target.value });
+    const searchField = event.target.value.toLocaleLowerCase();
+    return this.setState(() => {
+      return { searchField };
+    });
   };
 
   render() {
@@ -35,7 +38,7 @@ class App extends Component {
     const { onSearchChange } = this;
     const filteredUsers = users.filter((user) => {
       const fullName = `${user.name.first} ${user.name.last}`;
-      return fullName.toLowerCase().includes(searchField.toLowerCase());
+      return fullName.toLowerCase().includes(searchField);
     });
     return !users.length ? (
       <Spinner />
