@@ -19,15 +19,8 @@ class App extends Component {
     )
       .then((resp) => resp.json())
       .then((userData) => {
-        return this.setState({
-          users: userData.results.map((user) => {
-            return {
-              firstName: user.name.first,
-              lastName: user.name.last,
-              email: user.email,
-              picture: user.picture.large,
-            };
-          }),
+        return this.setState(() => {
+          return { users: userData.results };
         });
       })
       .catch((error) => console.log(error));
@@ -39,8 +32,9 @@ class App extends Component {
 
   render() {
     const { users, searchField } = this.state;
+    const { onSearchChange } = this;
     const filteredUsers = users.filter((user) => {
-      const fullName = `${user.firstName} ${user.lastName}`;
+      const fullName = `${user.name.first} ${user.name.last}`;
       return fullName.toLowerCase().includes(searchField.toLowerCase());
     });
     return !users.length ? (
@@ -48,7 +42,10 @@ class App extends Component {
     ) : (
       <div className="tc">
         <h1>Friends Rolodex</h1>
-        <SearchBox searchChange={this.onSearchChange} />
+        <SearchBox
+          placeholder="search friends"
+          onChangeHandler={onSearchChange}
+        />
         <Scroll>
           <CardList users={filteredUsers} />
         </Scroll>
